@@ -1,0 +1,20 @@
+<div class="pet" *ngFor="let pet of listPets">
+    <div class="pet-left">
+      <div class="number">
+        <p>1</p>
+      </div>
+      <div class="avatar">
+        <img src="https://d2d0m32kr3hci1.cloudfront.net/unknown_2_160.jpg" alt="avatar">
+      </div>
+      <div class="pseudo">
+        <p>{{pet.pseudo}}</p>
+      </div>
+      <div class="breed">
+        <p>{{pet.breed}}</p>
+      </div>
+    </div>
+
+    <div class="pet-right">
+      <button>Delete</button>
+    </div>
+</div>
