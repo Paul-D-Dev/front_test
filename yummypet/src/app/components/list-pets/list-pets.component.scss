@@ -1,0 +1,35 @@
+.pet {
+  display: flex;
+  background-color: #A8B32C;
+  border-radius: 25px;
+  margin-bottom: 1%;
+}
+
+.pet-left {
+  display: flex;
+  padding-left: 1em;
+}
+.avatar {
+  margin: 7% 10% auto 25%;
+  align-self: center;
+  img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+}
+
+.pseudo {
+  padding-right: 1em;
+}
+.breed {
+  font-style: italic;
+  font-size: 0.7em;
+  line-height: 2.5em;
+}
+.pet-right {
+  margin: auto 15px auto auto;
+}
+button {
+  color : #c86a6a;
+}

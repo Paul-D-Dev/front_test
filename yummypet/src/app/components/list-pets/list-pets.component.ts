@@ -1,3 +1,4 @@
+import { Pet } from './../../shared/models/pet';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPetsComponent implements OnInit {
 
+  listPets: Pet[] = [
+    {
+      id : 1,
+      pseudo : 'Sullie',
+      breed : 'Beagle'
+    },
+    {
+      id : 1,
+      pseudo : 'Sullie',
+      breed : 'Beagle'
+    }
+  ];
   constructor() { }
 
   ngOnInit() {
