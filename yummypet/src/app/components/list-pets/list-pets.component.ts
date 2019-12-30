@@ -18,6 +18,11 @@ export class ListPetsComponent implements OnInit {
       id : 1,
       pseudo : 'Sullie',
       breed : 'Beagle'
+    },
+    {
+      id : 1,
+      pseudo : 'Sullie',
+      breed : 'Beagle'
     }
   ];
   constructor() { }

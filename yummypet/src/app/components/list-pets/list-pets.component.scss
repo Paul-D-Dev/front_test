@@ -1,9 +1,41 @@
+  $button-color : #c86a6a;
+  $first-pet-text-color : #FFF;
+  $other-pet-text-color : black;
+
+  $first-pet-bg-color : #A8B32C;
+  $second-pet-bg-color : rgba(168, 179, 44, 0.25);
+  $third-pet-bg-color :  rgba(168, 179, 44, 0.1);
+  $other-pet-bg-color : #EFEEED;
+
+
 .pet {
   display: flex;
-  background-color: #A8B32C;
   border-radius: 25px;
   margin-bottom: 1%;
 }
+
+.pet:first-of-type{
+  color : $first-pet-text-color;
+  background-color: $first-pet-bg-color;
+}
+
+.pet:nth-of-type(2) {
+  color : $other-pet-text-color;
+  background-color: $second-pet-bg-color;
+}
+
+.pet:nth-of-type(3) {
+  color : $other-pet-text-color;
+  background-color: $third-pet-bg-color;
+}
+
+@for $i from 4 through 10 {
+  .pet:nth-of-type(#{$i}) {
+    color : $other-pet-text-color;
+    background-color: $other-pet-bg-color;
+  }
+}
+
 
 .pet-left {
   display: flex;
@@ -31,5 +63,5 @@
   margin: auto 15px auto auto;
 }
 button {
-  color : #c86a6a;
+  color : $button-color;
 }
