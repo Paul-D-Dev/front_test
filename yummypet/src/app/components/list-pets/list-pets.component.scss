@@ -54,11 +54,17 @@
 
 .pseudo {
   padding-right: 1em;
+    p {
+      width: 100px;
+    }
 }
 .breed {
   font-style: italic;
   font-size: 0.7em;
   line-height: 2.5em;
+    p {
+      width: 150px;
+    }
 }
 .pet-right {
   margin: auto 15px auto auto;

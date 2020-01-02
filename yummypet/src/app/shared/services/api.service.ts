@@ -9,10 +9,11 @@ import { Pets } from '../models/pets';
 })
 export class ApiService {
 
+  nb = 10;
   APIURL = 'https://api.yummypets.com/pets';
   constructor( private http: HttpClient) { }
 
   getPets(): Observable<Pets> {
-    return this.http.get<Pets>(this.APIURL);
+    return this.http.get<Pets>(this.APIURL + `?limit=10`);
   }
 }

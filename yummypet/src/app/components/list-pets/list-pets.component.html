@@ -4,13 +4,13 @@
         <p>1</p>
       </div>
       <div class="avatar">
-        <img src="https://d2d0m32kr3hci1.cloudfront.net/unknown_2_160.jpg" alt="avatar">
+        <img [src]="pet.resource.avatar.thumb" alt="avatar">
       </div>
       <div class="pseudo">
-        <p>{{pet.pseudo}}</p>
+        <p>{{pet.resource.pseudo}}</p>
       </div>
       <div class="breed">
-        <p>{{pet.breed}}</p>
+        <p>{{pet.resource.breed.lib}}</p>
       </div>
     </div>
 
@@ -19,6 +19,3 @@
     </div>
 </div>
 
-<div *ngFor="let pet of pets">
- {{pet.resource.pseudo}}
-</div>
