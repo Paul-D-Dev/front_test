@@ -1,7 +1,7 @@
-<div class="pet" *ngFor="let pet of listPets">
+<div class="pet" *ngFor="let pet of listPets index as i" >
     <div class="pet-left">
       <div class="number">
-        <p>1</p>
+        <p>{{i+1}}</p>
       </div>
       <div class="avatar">
         <img [src]="pet.resource.avatar.thumb" alt="avatar">
@@ -15,7 +15,7 @@
     </div>
 
     <div class="pet-right">
-      <button>Delete</button>
+      <button (click)="delete(pet, i)">Delete</button>
     </div>
 </div>
 

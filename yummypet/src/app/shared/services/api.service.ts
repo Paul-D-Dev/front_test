@@ -9,7 +9,7 @@ import { Pets } from '../models/pets';
 })
 export class ApiService {
 
-  APIURL = 'https://api.yummypets.com/pets';
+  APIURL = 'https://api.yummypets.com/pets/';
   constructor( private http: HttpClient) { }
 
   getPets(): Observable<Pets> {
