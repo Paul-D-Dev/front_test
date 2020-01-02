@@ -12,4 +12,7 @@ export class AddPetComponent implements OnInit {
   ngOnInit() {
   }
 
+  addPet(i) {
+
+  }
 }

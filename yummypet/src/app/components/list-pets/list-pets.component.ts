@@ -1,5 +1,7 @@
+import { ApiService } from './../../shared/services/api.service';
 import { Pet } from './../../shared/models/pet';
 import { Component, OnInit } from '@angular/core';
+import { Pets } from '../../shared/models/pets';
 
 @Component({
   selector: 'app-list-pets',
@@ -23,11 +25,27 @@ export class ListPetsComponent implements OnInit {
       id : 1,
       pseudo : 'Sullie',
       breed : 'Beagle'
+    },
+    {
+      id : 1,
+      pseudo : 'Sullie',
+      breed : 'Beagle'
+    },
+    {
+      id : 1,
+      pseudo : 'Sullie',
+      breed : 'Beagle'
     }
   ];
-  constructor() { }
+
+  pets;
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-  }
+    this.apiService.getPets().subscribe((data) => {
+      this.pets = data.collection;
+      console.log(this.pets);
+  });
 
+}
 }
