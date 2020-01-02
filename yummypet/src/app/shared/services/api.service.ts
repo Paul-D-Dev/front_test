@@ -9,7 +9,6 @@ import { Pets } from '../models/pets';
 })
 export class ApiService {
 
-  nb = 10;
   APIURL = 'https://api.yummypets.com/pets';
   constructor( private http: HttpClient) { }
 

@@ -2,6 +2,7 @@
 
   $first-pet-text-color : #FFF;
   $other-pet-text-color : black;
+  $pet-breed-text-color : #6D6960;
 
   $first-pet-bg-color : #A8B32C;
   $second-pet-bg-color : rgba(168, 179, 44, 0.25);
@@ -38,12 +39,21 @@
 }
 
 
+@for $i from 2 through 10 {
+  .pet:nth-of-type(#{$i}) {
+    .breed {
+      color : $pet-breed-text-color;
+    }
+  }
+}
+
+
 .pet-left {
   display: flex;
   padding-left: 1em;
 }
 .avatar {
-  margin: 7% 10% auto 25%;
+  margin: 0 10% 0 10%;
   align-self: center;
   img {
     width: 32px;
