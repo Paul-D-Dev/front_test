@@ -13,7 +13,7 @@ export class PetsComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.getPets().subscribe((data) => {
+    this.apiService.getPets(10).subscribe((data) => {
       this.getPets = data.collection;
     });
 
