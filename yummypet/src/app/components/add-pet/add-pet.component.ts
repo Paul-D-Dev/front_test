@@ -12,6 +12,8 @@ export class AddPetComponent implements OnInit {
 
   @Output() addNewPet = new EventEmitter<Pet>();
 
+  submitted = false;
+
 petForm = this.fb.group({
   resource : this.fb.group({
     avatar: this.fb.group({
@@ -39,6 +41,10 @@ constructor(private fb: FormBuilder) { }
 ngOnInit() {
   }
 
+  onSubmit() {
+    this.submitted = true;
+
+  }
 addPet() {
   this.petForm.patchValue({
     resource : {

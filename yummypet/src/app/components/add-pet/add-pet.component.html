@@ -1,24 +1,22 @@
-<form [formGroup]="petForm" (ngSubmit)=addPet()>
-
+<form [formGroup]="petForm" (ngSubmit)="petForm.valid && addPet()" >
   <div formGroupName="resource" class="resource">
-
     <div class="pseudo">
-      <input type="text" formControlName="pseudo" placeholder="Pseudo" required >
-      <div *ngIf="pseudo.errors && !petForm.get('resource.pseudo').pristine" class="error">
-        <div [hidden]="!pseudo.errors.required">Pseudo is required.</div>
+      <input type="text" formControlName="pseudo" placeholder="Pseudo *" required>
+      <div *ngIf="pseudo.errors && submitted">
+        <div [hidden]="!pseudo.errors.required" class="error-message">Pseudo is required.</div>
       </div>
     </div>
 
     <div formGroupName="breed" class="lib">
-      <input type="text"  formControlName="lib" placeholder="Breed" required class="error">
-      <div *ngIf="lib.errors && !petForm.get('resource.breed.lib').pristine">
-        <div [hidden]="!lib.errors.required">Libelle is required.</div>
+      <input type="text"  formControlName="lib" placeholder="Breed *" required>
+      <div *ngIf="lib.errors && submitted">
+        <div [hidden]="!lib.errors.required" class="error-message">Breed is required.</div>
       </div>
     </div>
 
   </div>
 
   <div class="btn">
-    <button type="submit" [disabled]="!petForm.valid">ADD PET</button>
+    <button type="submit" (click)="onSubmit()">ADD PET</button>
   </div>
 </form>
