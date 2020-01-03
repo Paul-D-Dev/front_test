@@ -5,6 +5,18 @@ form {
   justify-content: space-between;
 }
 
+.resource {
+  display: flex;
+  justify-content: inherit;
+  width: 85%;
+}
+
+.error-message{
+  color : #E45D67;
+  font-size: 0.7em;
+  padding-left: 5%;
+}
+
 input {
   width: 300px;
   height: 20px;
@@ -19,4 +31,5 @@ button {
   height: 25px;
   background-color: $button-bg-color;
   border-radius: 20px;
+  font-weight: bold;
 }

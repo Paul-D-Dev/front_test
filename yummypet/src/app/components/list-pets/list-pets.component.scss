@@ -1,11 +1,14 @@
   $button-color : #c86a6a;
+
   $first-pet-text-color : #FFF;
   $other-pet-text-color : black;
+  $pet-breed-text-color : #6D6960;
 
   $first-pet-bg-color : #A8B32C;
   $second-pet-bg-color : rgba(168, 179, 44, 0.25);
   $third-pet-bg-color :  rgba(168, 179, 44, 0.1);
   $other-pet-bg-color : #EFEEED;
+  $maxLoop : 15;
 
 
 .pet {
@@ -29,7 +32,7 @@
   background-color: $third-pet-bg-color;
 }
 
-@for $i from 4 through 10 {
+@for $i from 4 through $maxLoop {
   .pet:nth-of-type(#{$i}) {
     color : $other-pet-text-color;
     background-color: $other-pet-bg-color;
@@ -37,33 +40,59 @@
 }
 
 
-.pet-left {
-  display: flex;
-  padding-left: 1em;
-}
-.avatar {
-  margin: 7% 10% auto 25%;
-  align-self: center;
-  img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
+@for $i from 2 through $maxLoop {
+  .pet:nth-of-type(#{$i}) {
+    .breed {
+      color : $pet-breed-text-color;
+    }
   }
 }
 
-.pseudo {
-  padding-right: 1em;
+
+.pet-left {
+  display: flex;
+  padding-left: 1em;
+
+    .number {
+      width: 10px;
+    }
+
+    .avatar {
+      margin: 0px 15px 0 30px;
+      align-self: center;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+    }
+
+    .pseudo {
+      padding-right: 1em;
+        p{
+          width: auto;
+          white-space: nowrap;
+        }
+    }
+
+    .breed {
+      font-style: italic;
+      font-size: 0.7em;
+      margin: auto 0 auto auto;
+        p {
+          width: auto;
+          white-space: nowrap;
+        }
+    }
 }
-.breed {
-  font-style: italic;
-  font-size: 0.7em;
-  line-height: 2.5em;
-}
+
 .pet-right {
   margin: auto 15px auto auto;
-}
-button {
-  color : $button-color;
-  background-color: transparent;
-  border: none;
+
+    button {
+      color : $button-color;
+      background-color: transparent;
+      border: none;
+    }
 }

@@ -2,11 +2,11 @@
 <div class="pet">
 
   <div class="add">
-    <app-add-pet></app-add-pet>
+    <app-add-pet (addNewPet)="getNewPet($event)"></app-add-pet>
   </div>
 
   <div class="list">
-    <app-list-pets></app-list-pets>
+    <app-list-pets [listPets]="getPets"></app-list-pets>
   </div>
 </div>
 

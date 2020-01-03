@@ -1,5 +1,6 @@
-import { Pet } from './../../shared/models/pet';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ApiService } from './../../shared/services/api.service';
+import { Pet } from '../../shared/models/pet';
 
 @Component({
   selector: 'app-list-pets',
@@ -8,26 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPetsComponent implements OnInit {
 
-  listPets: Pet[] = [
-    {
-      id : 1,
-      pseudo : 'Sullie',
-      breed : 'Beagle'
-    },
-    {
-      id : 1,
-      pseudo : 'Sullie',
-      breed : 'Beagle'
-    },
-    {
-      id : 1,
-      pseudo : 'Sullie',
-      breed : 'Beagle'
-    }
-  ];
+  @Input() listPets;
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
+  delete(pet, i) {
+    if (pet.resource.id === this.listPets[i].resource.id) {
+      this.listPets.splice(i, 1);
+    } else {
+      console.log('KO');
+    }
+  }
 }
+
+

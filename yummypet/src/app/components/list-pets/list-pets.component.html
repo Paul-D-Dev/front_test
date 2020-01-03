@@ -1,20 +1,21 @@
-<div class="pet" *ngFor="let pet of listPets">
+<div class="pet" *ngFor="let pet of listPets index as i" >
     <div class="pet-left">
       <div class="number">
-        <p>1</p>
+        <p>{{i+1}}</p>
       </div>
       <div class="avatar">
-        <img src="https://d2d0m32kr3hci1.cloudfront.net/unknown_2_160.jpg" alt="avatar">
+        <img [src]="pet.resource.avatar.thumb" alt="avatar">
       </div>
       <div class="pseudo">
-        <p>{{pet.pseudo}}</p>
+        <p>{{pet.resource.pseudo}}</p>
       </div>
       <div class="breed">
-        <p>{{pet.breed}}</p>
+        <p>{{pet.resource.breed.lib}}</p>
       </div>
     </div>
 
     <div class="pet-right">
-      <button>Delete</button>
+      <button (click)="delete(pet, i)">Delete</button>
     </div>
 </div>
+
