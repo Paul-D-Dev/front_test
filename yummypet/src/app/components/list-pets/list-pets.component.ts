@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from './../../shared/services/api.service';
+import { Pet } from '../../shared/models/pet';
 
 @Component({
   selector: 'app-list-pets',
@@ -8,14 +9,12 @@ import { ApiService } from './../../shared/services/api.service';
 })
 export class ListPetsComponent implements OnInit {
 
-  listPets = [];
+  @Input() listPets;
 
-  constructor(private apiService: ApiService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.apiService.getPets().subscribe((data) => {
-      this.listPets = data.collection;
-    });
+
   }
 
   delete(pet, i) {

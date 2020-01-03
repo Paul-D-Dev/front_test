@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../shared/services/api.service';
+import { Pet } from '../../shared/models/pet';
 
 @Component({
   selector: 'app-pets',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PetsComponent implements OnInit {
 
-  constructor() { }
+  getPets = [];
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.apiService.getPets().subscribe((data) => {
+      this.getPets = data.collection;
+    });
+    console.log(Math.floor(Math.random() * (599999 - 500000 + 1)) + 500000);
+
   }
 
+  getNewPet(pet: Pet): any {
+
+    this.getPets.push({...pet});
+    console.log(this.getPets);
+
+  }
 }
