@@ -14,9 +14,8 @@ export class PetsComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.getPets(10).subscribe((data) => {
-      this.getPets = data.collection;
+      this.getPets = data.collection.sort((a, b) => a.resource.pseudo.localeCompare(b.resource.pseudo));
     });
-
   }
 
   getNewPet(pet: Pet): any {
