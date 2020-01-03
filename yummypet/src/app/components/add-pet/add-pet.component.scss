@@ -5,6 +5,12 @@ form {
   justify-content: space-between;
 }
 
+.resource {
+  display: flex;
+  justify-content: inherit;
+  width: 85%;
+}
+
 input {
   width: 300px;
   height: 20px;

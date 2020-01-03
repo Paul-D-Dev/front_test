@@ -16,14 +16,10 @@ export class PetsComponent implements OnInit {
     this.apiService.getPets().subscribe((data) => {
       this.getPets = data.collection;
     });
-    console.log(Math.floor(Math.random() * (599999 - 500000 + 1)) + 500000);
 
   }
 
   getNewPet(pet: Pet): any {
-
     this.getPets.push({...pet});
-    console.log(this.getPets);
-
   }
 }
